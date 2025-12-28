@@ -6,17 +6,16 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:11:15 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/28 18:41:46 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/28 18:46:08 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <iostream>
 #include <vector>
+
 #define RED "\033[31m"
 #define GREEN "\033[32m"
-
-
 #define RESET "\033[0m"
 
 int main()
