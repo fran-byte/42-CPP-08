@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:11:15 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/28 18:40:31 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/28 18:41:46 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
         myContainer.push_back(i);
 
     std::cout << std::endl << " TESTING Simple Iterator Template " << std::endl << std::endl;
+    
     try
     {
         std::vector<int>::iterator it = easyfind(myContainer, 600);
