@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:11:15 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/28 17:20:30 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/28 17:26:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ int main()
 {
     std::vector<int> myContainer;
     
-    for(int i = 0; i <=1000 ; i=i+100)
+    for(int i = 0; i <=1000 ; i+=100)
         myContainer.push_back(i*2);
 
-    
+    std::cout << std::endl << " TESTING Simple Iterator Template " << std::endl << std::endl;
     try
     {
         std::vector<int>::iterator it = easyfind(myContainer, 600);
 
-        std::cout << GREEN <<" Found value: " << RESET << *it << std::endl;
+        std::cout << GREEN <<" Found value: " << RESET << *it << std::endl << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << RED << e.what() << RESET << std::endl;
+        std::cout << RED << e.what() << RESET << std::endl << std::endl;
     }
 
 
@@ -47,10 +47,8 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cout << RED << e.what() << RESET << std::endl;
+        std::cout << RED << e.what() << RESET << std::endl << std::endl;
     }
-        
-
 
     return 0;
 }
