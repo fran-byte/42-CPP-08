@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:11:15 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/28 17:26:20 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/28 18:40:31 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main()
 {
     std::vector<int> myContainer;
     
-    for(int i = 0; i <=1000 ; i+=100)
-        myContainer.push_back(i*2);
+    for(int i = 0; i <=1000 ; i+=200)
+        myContainer.push_back(i);
 
     std::cout << std::endl << " TESTING Simple Iterator Template " << std::endl << std::endl;
     try
