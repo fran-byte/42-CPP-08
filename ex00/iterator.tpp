@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 20:54:08 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/28 18:42:54 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/30 15:29:23 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typename T::iterator easyfind(T &container, int value)
     typename T::iterator it;
 
     it = std::find(container.begin(), container.end(), value);
-    
+
     if (it != container.end())
         return it;
     else
