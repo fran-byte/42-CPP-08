@@ -6,8 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 16:15:31 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/30 16:15:42 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/30 16:30:51 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+Span::Span(void) : _maxN(0) {}
+
+Span::Span(unsigned int maxN) : _maxN(maxN)
+{
+}

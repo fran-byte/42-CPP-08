@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:51:11 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/30 16:15:18 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/30 16:22:42 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Span
 {
 private:
     unsigned int _maxN;
-    std::vector<int> container;
+    std::vector<int> _container;
 
 public:
     Span(void);
