@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/27 20:32:43 by frromero          #+#    #+#              #
-#    Updated: 2025/12/27 21:27:18 by frromero         ###   ########.fr        #
+#    Updated: 2025/12/31 16:47:39 by p4c0             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 INCLUDES = -I .
 
-SRC =	main.cpp 
+SRC =	main.cpp
 		
 OBJ = $(SRC:.cpp=.o)
 

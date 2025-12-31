@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:51:11 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/30 16:22:42 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/31 16:17:08 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,8 @@ public:
     ~Span(void);
     Span &operator=(Span const &other);
     void addNumber(int number);
-    int shortestSpan() const;
-    int longestSpan() const;
-    class SpanFullException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
-
-    class NoSpanException : public std::exception
-    {
-    public:
-        const char *what() const throw();
-    };
+    int shortestSpan();
+    int longestSpan();
 };
 
 #endif
