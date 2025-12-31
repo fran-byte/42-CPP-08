@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 16:15:31 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/30 16:30:51 by frromero         ###   ########.fr       */
+/*   Updated: 2025/12/31 13:29:10 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,11 @@ Span::Span(void) : _maxN(0) {}
 
 Span::Span(unsigned int maxN) : _maxN(maxN)
 {
+    if (_maxN > 0)
+        _container.reserve(_maxN);
+
 }
+
+Span::Span(Span const &copy) 
+    : _maxN(copy._maxN), _container(copy._container) 
+{}
