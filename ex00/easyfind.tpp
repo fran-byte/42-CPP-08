@@ -1,17 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iterator.tpp                                       :+:      :+:    :+:   */
+/*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 20:54:08 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/30 15:29:23 by frromero         ###   ########.fr       */
+/*   Updated: 2026/01/01 12:55:29 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef ITERATOR_TPP
-#define ITERATOR_TPP
 
 #include <cstdlib>
 #include <exception>
@@ -31,4 +28,4 @@ typename T::iterator easyfind(T &container, int value)
         throw std::runtime_error(" Value not found in container !!");
 }
 
-#endif
+
