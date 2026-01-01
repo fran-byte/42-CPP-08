@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:52:50 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/01 13:20:12 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/01 21:21:10 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,30 @@ int main()
     try
     {
         Span sp(20);
+        std::cout << "Create Objet sp(20)" << std::endl;
         
+        std::cout << "Before addRange size = " << sp.getSize() << std::endl;
         sp.addRange(1, 10);
         std::cout << "After addRange(1,10): size = " << sp.getSize() << std::endl;
         
         int arr[] = {100, 200, 300, 400, 500};
         sp.addArray(arr, 5);
-        std::cout << "After addArray: size = " << sp.getSize() << std::endl;
+        std::cout << "After addArray: {100, 200, 300, 400, 500}  size = " << sp.getSize() << std::endl;
         
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl << std::endl;
+
+        std::cout << GREEN << "** Create another array and cause an Error ** " << RESET << std::endl;        
+       
+        Span sp2(5);
+        std::cout << "Create Objet sp2(5)" << std::endl;
+        std::cout << "Before addRange size = " << sp2.getSize() << std::endl;
+        sp2.addRange(1, 4);
+        std::cout << "After addRange(1,4): size = " << sp2.getSize() << std::endl;
+
+        int arr2[] = {100, 200, 300, 400, 500};
+        sp2.addArray(arr2, 5);
+
     }
     catch(const std::exception& e)
     {
