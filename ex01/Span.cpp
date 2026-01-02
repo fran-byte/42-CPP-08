@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 16:15:31 by frromero          #+#    #+#             */
-/*   Updated: 2026/01/02 13:34:08 by p4c0             ###   ########.fr       */
+/*   Created: 2026/01/02 14:11:48 by p4c0              #+#    #+#             */
+/*   Updated: 2026/01/02 14:11:51 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Span::Span(unsigned int maxN) : _maxN(maxN)
 {
     if (_maxN > 0)
         _container.reserve(_maxN);
-
 }
 
 Span::Span(Span const &copy) 
@@ -62,7 +61,6 @@ int Span::shortestSpan()
             shortNb = diff;
     }
     return shortNb;
-    
 }
 
 int Span::longestSpan()
@@ -73,34 +71,9 @@ int Span::longestSpan()
 
     std::sort(cpContainer.begin(), cpContainer.end());
     return *(cpContainer.end() - 1) - *(cpContainer.begin());
-
 }
 
 size_t Span::getSize() const 
 { 
     return _container.size();
-}
-
-void Span::addRange(int min, int max)
-{
-    if (min > max)
-        throw std::invalid_argument("Invalid range: min > max");
-    
-    size_t count = max - min + 1;
-    if (_container.size() + count > _maxN)
-        throw std::length_error("Span would exceed maximum capacity");
-    
-    for (int i = min; i <= max; ++i)
-        _container.push_back(i);
-}
-
-void Span::addArray(const int* array, size_t size)
-{
-    if (!array)
-        throw std::invalid_argument("Null array pointer");
-    
-    if (_container.size() + size > _maxN)
-        throw std::length_error("Span would exceed maximum capacity");
-    
-    _container.insert(_container.end(), array, array + size);
 }

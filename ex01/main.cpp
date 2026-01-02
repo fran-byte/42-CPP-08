@@ -6,18 +6,25 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:52:50 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/01 21:21:10 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 14:20:52 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
+#include <vector>
+#include <list>
+#include <deque>
+
 #define GREEN "\033[32m"
+#define CYAN "\033[36m"
+#define RED "\033[31m"
 #define RESET "\033[0m"
 
 int main()
 {
-    std::cerr << std::endl << GREEN <<"Subject Test:" << RESET << std::endl;
+    /* Subject Test */
+    std::cout << std::endl << GREEN << "Subject Test:" << RESET << std::endl;
     try
     {
         Span sp = Span(5);
@@ -26,61 +33,129 @@ int main()
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
-        std::cout << sp.shortestSpan() << std::endl;
-        std::cout << sp.longestSpan() << std::endl;
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
     }
 
-
-    std::cerr << std::endl << GREEN << "My Test:" << RESET << std::endl;
+    /* Performance Test with 500,000 numbers */
+    std::cout << std::endl << GREEN << "Performance Test (500,000 numbers):" << RESET << std::endl;
     try
     {        
-        Span sp = Span(500000);       // size 500,000
+        Span sp = Span(500000);
         for (int i = 0; i < 500000; ++i)
             sp.addNumber(i * 2);
-        std::cout << sp.shortestSpan() << std::endl;
-        std::cout << sp.longestSpan() << std::endl;
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
     }
 
-    std::cerr << std::endl << GREEN << "Test addRange & addArray:" << RESET << std::endl;
+    /* Test addNumbers with various containers */
+    std::cout << std::endl << CYAN << "Testing addNumbers with different containers:" << RESET << std::endl;
+    
+    std::cout << GREEN << std::endl << "1. Pointers are iterators:" << RESET << std::endl;
+    try
+    {
+        Span sp(10);
+        int arr[] = {100, 200, 300, 400, 500};
+        sp.addNumbers(arr, arr + 5);
+        std::cout << "Added 5 elements from array. Size: " << sp.getSize() << std::endl;
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
+    }
+
+    std::cout << GREEN << std::endl << "2. std::vector:" << RESET << std::endl;
+    try
+    {
+        Span sp(15);
+        std::vector<int> vec;
+        for (int i = 1; i <= 10; ++i)
+            vec.push_back(i * 10);
+        
+        sp.addNumbers(vec.begin(), vec.end());
+        std::cout << "Added 10 elements from vector. Size: " << sp.getSize() << std::endl;
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
+    }
+
+    std::cout << GREEN << std::endl << "3. std::list:" << RESET << std::endl;
+    try
+    {
+        Span sp(8);
+        std::list<int> lst;
+        lst.push_back(7);
+        lst.push_back(14);
+        lst.push_back(21);
+        lst.push_back(28);
+        
+        sp.addNumbers(lst.begin(), lst.end());
+        std::cout << "Added 4 elements from list. Size: " << sp.getSize() << std::endl;
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
+    }
+
+    std::cout << GREEN << std::endl << "4. Error test (exceeding capacity):" << RESET << std::endl;
+    try
+    {
+        Span sp(5);
+        std::deque<int> deq;
+        deq.push_back(1);
+        deq.push_back(2);
+        deq.push_back(3);
+        deq.push_back(4);
+        deq.push_back(5);
+        deq.push_back(6);
+        
+        sp.addNumbers(deq.begin(), deq.end());
+        std::cout << "Size: " << sp.getSize() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << RED << "Expected error: " << e.what() << RESET << std::endl;
+    }
+
+    std::cout << GREEN << std::endl << "5. Mixed usage (addNumber + addNumbers):" << RESET << std::endl;
     try
     {
         Span sp(20);
-        std::cout << "Create Objet sp(20)" << std::endl;
+        sp.addNumber(42);
+        sp.addNumber(84);
         
-        std::cout << "Before addRange size = " << sp.getSize() << std::endl;
-        sp.addRange(1, 10);
-        std::cout << "After addRange(1,10): size = " << sp.getSize() << std::endl;
+        std::vector<int> moreNumbers;
+        moreNumbers.push_back(126);
+        moreNumbers.push_back(168);
+        moreNumbers.push_back(210);
         
-        int arr[] = {100, 200, 300, 400, 500};
-        sp.addArray(arr, 5);
-        std::cout << "After addArray: {100, 200, 300, 400, 500}  size = " << sp.getSize() << std::endl;
+        sp.addNumbers(moreNumbers.begin(), moreNumbers.end());
         
+        int arr[] = {252, 294, 336};
+        sp.addNumbers(arr, arr + 3);
+        
+        std::cout << "Final size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
-        std::cout << "Longest span:  " << sp.longestSpan() << std::endl << std::endl;
-
-        std::cout << GREEN << "** Create another array and cause an Error ** " << RESET << std::endl;        
-       
-        Span sp2(5);
-        std::cout << "Create Objet sp2(5)" << std::endl;
-        std::cout << "Before addRange size = " << sp2.getSize() << std::endl;
-        sp2.addRange(1, 4);
-        std::cout << "After addRange(1,4): size = " << sp2.getSize() << std::endl;
-
-        int arr2[] = {100, 200, 300, 400, 500};
-        sp2.addArray(arr2, 5);
-
+        std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
     }
-return 0;
+    return 0;
 }
