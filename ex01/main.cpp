@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:52:50 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 14:29:00 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 14:35:04 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main()
     {
         Span sp(10);
         int arr[] = {100, 200, 300, 400, 500};
-        sp.addRange(arr, arr + 5);
+        sp.addRange(arr, arr + 5); /*Pointers: add(arr[0]) and add(arr[5])*/
         std::cout << "Added 5 elements from array. Size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
