@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:11:03 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 14:11:06 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 14:29:00 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdexcept>
 
 template <typename InputIterator>
-void Span::addNumbers(InputIterator begin, InputIterator end)
+void Span::addRange(InputIterator begin, InputIterator end)
 {
     size_t dist = std::distance(begin, end);
     if (_container.size() + dist > _maxN)

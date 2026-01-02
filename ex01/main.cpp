@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:52:50 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 14:20:52 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 14:29:00 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ int main()
         std::cerr << RED << "Error: " << e.what() << RESET << std::endl;
     }
 
-    /* Test addNumbers with various containers */
-    std::cout << std::endl << CYAN << "Testing addNumbers with different containers:" << RESET << std::endl;
+    /* Test addRange with various containers */
+    std::cout << std::endl << CYAN << "Testing addRange with different containers:" << RESET << std::endl;
     
     std::cout << GREEN << std::endl << "1. Pointers are iterators:" << RESET << std::endl;
     try
     {
         Span sp(10);
         int arr[] = {100, 200, 300, 400, 500};
-        sp.addNumbers(arr, arr + 5);
+        sp.addRange(arr, arr + 5);
         std::cout << "Added 5 elements from array. Size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
@@ -82,7 +82,7 @@ int main()
         for (int i = 1; i <= 10; ++i)
             vec.push_back(i * 10);
         
-        sp.addNumbers(vec.begin(), vec.end());
+        sp.addRange(vec.begin(), vec.end());
         std::cout << "Added 10 elements from vector. Size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
@@ -102,7 +102,7 @@ int main()
         lst.push_back(21);
         lst.push_back(28);
         
-        sp.addNumbers(lst.begin(), lst.end());
+        sp.addRange(lst.begin(), lst.end());
         std::cout << "Added 4 elements from list. Size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
@@ -124,7 +124,7 @@ int main()
         deq.push_back(5);
         deq.push_back(6);
         
-        sp.addNumbers(deq.begin(), deq.end());
+        sp.addRange(deq.begin(), deq.end());
         std::cout << "Size: " << sp.getSize() << std::endl;
     }
     catch(const std::exception& e)
@@ -132,7 +132,7 @@ int main()
         std::cerr << RED << "Expected error: " << e.what() << RESET << std::endl;
     }
 
-    std::cout << GREEN << std::endl << "5. Mixed usage (addNumber + addNumbers):" << RESET << std::endl;
+    std::cout << GREEN << std::endl << "5. Mixed usage (addNumber + addRange):" << RESET << std::endl;
     try
     {
         Span sp(20);
@@ -144,10 +144,10 @@ int main()
         moreNumbers.push_back(168);
         moreNumbers.push_back(210);
         
-        sp.addNumbers(moreNumbers.begin(), moreNumbers.end());
+        sp.addRange(moreNumbers.begin(), moreNumbers.end());
         
         int arr[] = {252, 294, 336};
-        sp.addNumbers(arr, arr + 3);
+        sp.addRange(arr, arr + 3);
         
         std::cout << "Final size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;

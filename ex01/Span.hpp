@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:08:34 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 14:10:34 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 14:29:00 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
     size_t getSize() const;
     
     template <typename InputIterator>
-    void addNumbers(InputIterator begin, InputIterator end);
+    void addRange(InputIterator begin, InputIterator end);
 };
 
 #include "Span.tpp"
