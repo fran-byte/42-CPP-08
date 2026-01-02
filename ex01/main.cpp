@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:52:50 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 14:38:18 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 14:40:39 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int main()
         for (int i = 1; i <= 10; ++i)
             vec.push_back(i * 10);
         
-        sp.addRange(vec.begin(), vec.end());
+        sp.addRange(vec.begin(), vec.end()); /*Iterates a vector vec*/
         std::cout << "Added 10 elements from vector. Size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
@@ -102,7 +102,7 @@ int main()
         lst.push_back(21);
         lst.push_back(28);
         
-        sp.addRange(lst.begin(), lst.end());
+        sp.addRange(lst.begin(), lst.end()); /*Iterates a list<int> lst*/
         std::cout << "Added 4 elements from list. Size: " << sp.getSize() << std::endl;
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span:  " << sp.longestSpan() << std::endl;
