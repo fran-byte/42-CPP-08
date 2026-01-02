@@ -6,12 +6,10 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 20:54:08 by frromero          #+#    #+#             */
-/*   Updated: 2026/01/01 12:55:29 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 15:32:40 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
-#include <exception>
 #include <algorithm>
 #include <stdexcept>
 
