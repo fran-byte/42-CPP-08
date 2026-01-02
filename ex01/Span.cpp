@@ -6,7 +6,7 @@
 /*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 16:15:31 by frromero          #+#    #+#             */
-/*   Updated: 2026/01/01 13:16:01 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/02 13:34:08 by p4c0             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ int Span::shortestSpan()
     if (_container.size() < 2)
         throw std::runtime_error("Not enough elements to calculate span");
     int shortNb = INT_MAX;
+    std::vector<int> cpContainer = _container;
 
-    std::sort(_container.begin(), _container.end());
-    for (std::vector<int>::iterator it = _container.begin() + 1; it != _container.end(); ++it)
+    std::sort(cpContainer.begin(), cpContainer.end());
+    for (std::vector<int>::iterator it = cpContainer.begin() + 1; it != cpContainer.end(); ++it)
     {
         int diff = *it - *(it - 1);
         if (diff < shortNb)
@@ -66,10 +67,12 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-     if (_container.size() < 2)
+    if (_container.size() < 2)
         throw std::runtime_error("Not enough elements to calculate span");
-    std::sort(_container.begin(), _container.end());
-    return *(_container.end() - 1) - *(_container.begin());
+    std::vector<int> cpContainer = _container;
+
+    std::sort(cpContainer.begin(), cpContainer.end());
+    return *(cpContainer.end() - 1) - *(cpContainer.begin());
 
 }
 
