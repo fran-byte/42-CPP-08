@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:11:48 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/09 20:43:16 by frromero         ###   ########.fr       */
+/*   Updated: 2026/01/09 20:45:56 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int Span::shortestSpan() const
     {
         int diff = *it - *(it - 1);
         if (diff < shortNb)
-            shortNb = diff;
+            shortNb = diff; /* select the smallest value */
     }
     return shortNb;
 }
