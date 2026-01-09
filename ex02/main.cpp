@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 11:41:47 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/09 21:05:55 by frromero         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:07:26 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int main()
 
     /* Comparison with std::list */
     std::cout << std::endl
-              << BLUE "Comparison with std::list<int> lst   this container std::list supports begin() and end()" RESET << std::endl;
+              << BLUE "Comparison with std::list<int> lst ->>>>  this container std::list supports begin() and end()" RESET << std::endl;
 
     std::list<int> lst;
 
