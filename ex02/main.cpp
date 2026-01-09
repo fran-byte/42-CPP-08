@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 11:41:47 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/01 12:48:23 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/09 20:51:27 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,17 @@
 #define BLUE "\033[34m"
 #define RESET "\033[0m"
 
+/*
+ * This exercise shows how MutantStack works
+ * It's like a normal stack, but we added iterators so we can go through all elements
+ * The regular std::stack does not have begin() or end() methods
+ */
+
 int main()
 {
     /* Subject Tests*/
-    std::cout << std::endl << GREEN "Subject Tests: MutantStack<int> mstack" RESET << std::endl;
+    std::cout << std::endl
+              << GREEN "Subject Tests: MutantStack<int> mstack" RESET << std::endl;
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
@@ -48,7 +55,9 @@ int main()
 
     /* Copy & assignation */
 
-    std::cout << std::endl << GREEN "My Tests: " RESET << std::endl << std::endl;
+    std::cout << std::endl
+              << GREEN "My Tests: " RESET << std::endl
+              << std::endl;
 
     MutantStack<int> mstack2 = mstack;
     MutantStack<int> mstack3;
@@ -67,7 +76,8 @@ int main()
     MutantStack<int>::iterator it3 = mstack3.begin();
     MutantStack<int>::iterator ite3 = mstack3.end();
 
-    std::cout << std::endl << GREEN "mstack3 (Operator Assignment):" RESET << std::endl;
+    std::cout << std::endl
+              << GREEN "mstack3 (Operator Assignment):" RESET << std::endl;
     while (it3 != ite3)
     {
         std::cout << *it3 << std::endl;
@@ -75,9 +85,10 @@ int main()
     }
 
     /* Comparison with std::list */
-    std::cout << std::endl << BLUE "Comparison with std::list<int> lst" RESET << std::endl;
+    std::cout << std::endl
+              << BLUE "Comparison with std::list<int> lst" RESET << std::endl;
 
-    std::list<int>  lst;
+    std::list<int> lst;
 
     lst.push_back(5);
     lst.push_back(17);
