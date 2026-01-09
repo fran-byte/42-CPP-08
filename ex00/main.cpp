@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 21:11:15 by frromero          #+#    #+#             */
-/*   Updated: 2025/12/30 15:44:29 by frromero         ###   ########.fr       */
+/*   Updated: 2026/01/09 20:19:15 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
 int main()
 {
 
-    std::vector<int> myContainer0;
+    std::vector<int> myContainer0; /* Void*/
 
     std::cout << std::endl
-              << " TESTING Simple Iterator Template with EMPTY vector<int>" << std::endl
+              << " TESTING [VECTOR] Simple Iterator Template with EMPTY vector<int>" << std::endl
+              << " ----------------------------------------------------------"
               << std::endl;
 
     try
@@ -41,18 +42,19 @@ int main()
                   << std::endl;
     }
 
-    std::vector<int> myContainer;
+    std::vector<int> myContainer1;
 
     for (int i = 0; i <= 1000; i += 200)
-        myContainer.push_back(i);
+        myContainer1.push_back(i);
 
     std::cout << std::endl
-              << " TESTING Simple Iterator Template with vector<int>" << std::endl
+              << " TESTING [VECTOR] Simple Iterator Template with vector<int>" << std::endl
+              << " ----------------------------------------------------------"
               << std::endl;
 
     try
     {
-        std::vector<int>::iterator it = easyfind(myContainer, 600);
+        std::vector<int>::iterator it = easyfind(myContainer1, 600);
 
         std::cout << GREEN << " Found value: " << RESET << *it << std::endl
                   << std::endl;
@@ -65,7 +67,7 @@ int main()
 
     try
     {
-        std::vector<int>::iterator it = easyfind(myContainer, 500);
+        std::vector<int>::iterator it = easyfind(myContainer1, 500);
 
         std::cout << GREEN << " Found value: " << RESET << *it << std::endl;
     }
@@ -76,7 +78,8 @@ int main()
     }
 
     std::cout << std::endl
-              << " TESTING Simple Iterator Template with list<int>" << std::endl
+              << " TESTING [LIST] Simple Iterator Template with list<int>" << std::endl
+              << " ------------------------------------------------------"
               << std::endl;
 
     std::list<int> myContainer2;
