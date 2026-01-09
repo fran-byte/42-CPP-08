@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:11:48 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/09 20:23:03 by frromero         ###   ########.fr       */
+/*   Updated: 2026/01/09 20:43:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int Span::shortestSpan() const
     int shortNb = INT_MAX;
     std::vector<int> cpContainer = _container;
 
-    std::sort(cpContainer.begin(), cpContainer.end());
+    std::sort(cpContainer.begin(), cpContainer.end()); /* sort cpContainer */
     for (std::vector<int>::const_iterator it = cpContainer.begin() + 1; it != cpContainer.end(); ++it)
     {
         int diff = *it - *(it - 1);
