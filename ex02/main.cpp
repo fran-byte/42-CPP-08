@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 11:41:47 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/09 20:51:27 by frromero         ###   ########.fr       */
+/*   Updated: 2026/01/09 20:57:36 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 int main()
 {
-    /* Subject Tests*/
+    /* ******************* Subject Tests ******************************* */
     std::cout << std::endl
               << GREEN "Subject Tests: MutantStack<int> mstack" RESET << std::endl;
     MutantStack<int> mstack;
@@ -51,7 +51,7 @@ int main()
     }
     std::stack<int> s(mstack);
 
-    /* My Tests */
+    /* ***************** My Tests *****************************************/
 
     /* Copy & assignation */
 
