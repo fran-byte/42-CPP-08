@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:11:48 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 15:29:57 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/09 20:23:03 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ Span::Span(unsigned int maxN) : _maxN(maxN)
         _container.reserve(_maxN);
 }
 
-Span::Span(Span const &copy) 
-    : _maxN(copy._maxN), _container(copy._container) 
-{}
+Span::Span(Span const &copy)
+    : _maxN(copy._maxN), _container(copy._container)
+{
+}
 
-Span::~Span(void){}
+Span::~Span(void) {}
 
 Span &Span::operator=(Span const &other)
 {
@@ -39,6 +40,7 @@ Span &Span::operator=(Span const &other)
     return *this;
 }
 
+/* Adds a number to the container */
 void Span::addNumber(int number)
 {
     if (_container.size() >= _maxN)
@@ -46,6 +48,7 @@ void Span::addNumber(int number)
     _container.push_back(number);
 }
 
+/* Returns the shortest span (smallest difference) between any two numbers */
 int Span::shortestSpan() const
 {
     if (_container.size() < 2)
@@ -63,6 +66,7 @@ int Span::shortestSpan() const
     return shortNb;
 }
 
+/* Returns the longest span (largest difference) between any two numbers */
 int Span::longestSpan() const
 {
     if (_container.size() < 2)
@@ -73,7 +77,7 @@ int Span::longestSpan() const
     return *(cpContainer.end() - 1) - *(cpContainer.begin());
 }
 
-size_t Span::getSize() const 
-{ 
+size_t Span::getSize() const
+{
     return _container.size();
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.tpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: p4c0 <p4c0@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:11:03 by p4c0              #+#    #+#             */
-/*   Updated: 2026/01/02 14:29:00 by p4c0             ###   ########.fr       */
+/*   Updated: 2026/01/09 20:26:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 #include <iterator>
 #include <stdexcept>
 
+/*
+ * @brief Adds a range of numbers to the container.
+ *
+ * Copies all elements from the iterator range [begin, end) into the container.
+ * Throws an exception if adding the range would exceed the maximum capacity.
+ *
+ * @tparam InputIterator Any iterator type pointing to integer-like elements.
+ * @param begin Iterator pointing to the first element to add.
+ * @param end Iterator pointing past the last element to add.
+ */
 template <typename InputIterator>
 void Span::addRange(InputIterator begin, InputIterator end)
 {
